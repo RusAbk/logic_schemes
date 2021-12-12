@@ -53,3 +53,7 @@ svg.removeLinkMode .link:hover{
 svg.removeElementMode .base:hover{
     fill: rgb(221, 72, 46);
 }
+
+svg .base{
+    cursor: move;
+}
