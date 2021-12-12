@@ -1,0 +1,55 @@
+*{
+    font-family: 'Arial', sans-serif;
+}
+#scheme svg{
+    border: 1px solid black;
+}
+.unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently*/
+}
+.addElButton{
+    display: inline-block;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 10px 10px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+img.addElButton {
+    width: 50px;
+}
+button.addElButton{
+    background: #efefef;
+    color: #333;
+}
+.btnSelected{
+    background: rgb(221, 72, 46) !important;
+    color: #fff !important;
+}
+h2{
+    margin-bottom: 5px;
+}
+.addElementsPanel{
+    margin-bottom: 20px;
+}
+
+svg.linkMode rect{
+    stroke: rgb(117, 166, 245);
+    stroke-width: 2;
+}
+svg.linkMode .selectedElement{
+    stroke: rgb(46, 221, 72);
+    stroke-width: 4;
+}
+svg.removeLinkMode .link:hover{
+    stroke: rgb(221, 72, 46);
+}
+
+svg.removeElementMode .base:hover{
+    fill: rgb(221, 72, 46);
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="addElementsPanel">
+        <h2>Добавить элементы</h2>
+        <button id="btnAddInput">Input</button>
+        <button id="btnAddAnd">And</button>
+        <button id="btnAddOr">Or</button>
+        <button id="btnAddNand">Nand</button>
+        <button id="btnAddNor">Nor</button>
+        <button id="btnAddXor">Xor</button>
+        <button id="btnAddInv">Inv</button>
+        <br><br>
+        <button class="addElButton" id='btnLinkMode'>Соединить</button>
+        <button class="addElButton" id='btnRemoveLinkMode'>Удалить соединение</button>
+        <button class="addElButton" id='btnRemoveElementMode'>Удалить элемент</button>
+        <br><br>
+        <button class="addElButton" id="btnSave">Скачать схему</button>
+        <p id="url"></p>
+    </div>
+    <h2>Схема</h2>
+    <div id="scheme"></div>
+
+    <script src="https://unpkg.com/canvg@3.0.1/lib/umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@latest/dist/svg.min.js"></script>
+    <script src="classes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
