@@ -17,7 +17,7 @@ let linkMode = false;
 
 document.querySelector('#btnAddInput').addEventListener('click', function(){
     let node = new Input(drawer);
-    node.move(20, 20);
+    node.move(20, 0);
     elements.push(node);
 })
 document.querySelector('#btnAddAnd').addEventListener('click', function(){

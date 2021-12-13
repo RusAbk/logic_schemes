@@ -124,19 +124,17 @@ class Node{
 }
 
 class Input extends Node{
-    constructor(drawer, val = false, x = 0, y = 0){
+    constructor(drawer, val = false, x = 0){
         super(drawer, false);
         this.readyToDraw = false;
         this.val = val;
         this.type = 'input';
 
         this.x = x;
-        this.y = y;
-
-        this.d = 15;
+        this.width = 6;
 
         this.trueColor = '#2ecc71';
-        this.falseColor = '#bdc3c7';
+        this.falseColor = '#666';
         this.stroke = '#000';
 
         this.readyToDraw = true;
@@ -154,8 +152,9 @@ class Input extends Node{
 
     draw(){
         if(this.readyToDraw){
-            this.shape.base = this.drawer.circle(this.d);
+            this.shape.base = this.drawer.line(`${this.x},0 ${this.x},500`).stroke({ width: this.width });
             this.shape.base.addClass('base')
+            this.shape.base.move(this.x, 0);
              // this.shape.output = this.drawer.circle(`0,0 1,0`);
     
             this.shape.base.node.addEventListener('click', (e)=>{
@@ -186,11 +185,9 @@ class Input extends Node{
             this.shape.base.node.addEventListener('mousedown', (e)=>{
                 let rect = e.currentTarget.getBoundingClientRect();
                 let parentRect = e.currentTarget.parentElement.getBoundingClientRect()
-                // console.log(rect);
     
                 this.dragMode = true;
                 this.dragOffset = [e.clientX - rect.x + parentRect.x, e.clientY - rect.y + parentRect.y];
-                // e.currentTarget.requestPointerLock()
             })
             this.shape.base.node.addEventListener('mouseup', (e)=>{
                 this.dragMode = false;
@@ -198,7 +195,7 @@ class Input extends Node{
             })
             this.shape.base.node.addEventListener('mousemove', (e)=>{
                 if(this.dragMode){
-                    this.move(e.clientX - this.dragOffset[0], e.clientY - this.dragOffset[1])
+                    this.move(e.clientX - this.dragOffset[0], 0)
                     e.currentTarget.dispatchEvent(new CustomEvent("dragged"));
                 }
             })
@@ -208,9 +205,8 @@ class Input extends Node{
     }
     updateView(){
         console.log(this.shape.base)
-        this.shape.base.fill(this.val ? this.trueColor : this.falseColor)
-        this.shape.base.stroke({color: this.stroke, width: 2});
-        this.shape.base.move(this.x, this.y);
+        this.shape.base.stroke({color: this.val ? this.trueColor : this.falseColor, width: this.width});
+        this.shape.base.move(this.x, 0);
     }
 }
 
@@ -390,8 +386,15 @@ class Link{
             pos.x = this.node1.x + this.node1.w + this.node1.h/5;
             pos.y = this.node1.y + this.node1.h/2;
         } else if(this.node1.type == 'input') {
-            pos.x = this.node1.x + this.node1.d;
-            pos.y = this.node1.y + this.node1.d/2;
+            pos.x = this.node1.x;
+            if(this.node2.type == 'unaryNode'){
+                pos.y = this.node2.y + this.node2.h/2;
+            } else {
+                if(this.inputN == 1)
+                    pos.y = this.node2.y + this.node2.h/2 - this.node2.h/5;
+                else
+                    pos.y = this.node2.y + this.node2.h/2 + this.node2.h/5;
+            }
         }
 
         return pos;
