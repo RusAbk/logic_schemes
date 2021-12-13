@@ -377,7 +377,7 @@ class Link{
         this.node2 = node2;
         this.inputN = inputN;
 
-        this.line = null;
+        this.shape = {};
         this.draw();
     }
     calcPos1(){
@@ -418,11 +418,14 @@ class Link{
         let x2 = this.calcPos2().x
         let y2 = this.calcPos2().y
 
-        this.line = drawer.polyline(`${x1},${y1} ${x1 + (x2 - x1)/2},${y1} ${x1 + (x2 - x1)/2},${y2} ${x2},${y2}`).fill('none');
-        this.line.stroke({ color: '#000', width: 1, linecap: 'butt', linejoin: 'butt', width: 2 });
-        this.line.addClass('link')
+        this.shape.line = drawer.polyline(`${x1},${y1} ${x1 + (x2 - x1)/2},${y1} ${x1 + (x2 - x1)/2},${y2} ${x2},${y2}`).fill('none');
+        this.shape.line.stroke({ color: '#000', width: 1, linecap: 'butt', linejoin: 'butt', width: 2 });
+        this.shape.line.addClass('link')
+        if(this.node1.type == 'input'){
+            this.shape.dot = this.drawer.circle(12).fill('#000').move(x1 - 6, y1 - 6);
+        }
 
-        this.line.on('click', function(e){
+        this.shape.line.on('click', function(e){
             console.log(e.currentTarget.parentElement.classList.contains('removeLinkMode'));
             if(e.currentTarget.parentElement.classList.contains('removeLinkMode')){
                 this.remove();
@@ -442,6 +445,7 @@ class Link{
         let x2 = this.calcPos2().x
         let y1 = this.calcPos1().y;
         let y2 = this.calcPos2().y
-        this.line.plot(`${x1},${y1} ${x1 + (x2 - x1)/2},${y1} ${x1 + (x2 - x1)/2},${y2} ${x2},${y2}`)
+        this.shape.line.plot(`${x1},${y1} ${x1 + (x2 - x1)/2},${y1} ${x1 + (x2 - x1)/2},${y2} ${x2},${y2}`)
+        this.shape.dot.move(x1 - 6, y1 - 6);
     }
 }
