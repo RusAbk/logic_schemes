@@ -57,3 +57,7 @@ svg.removeElementMode .base:hover{
 svg .base{
     cursor: move;
 }
+
+.btn{
+    margin: 5px;
+}

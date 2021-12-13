@@ -1,0 +1,17 @@
+<svg width="40" height="51" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_1" y="0.500013" x="10.000007" class="base" stroke="#000000" fill="#ffffff" height="50" width="20"/>
+  <polyline id="svg_2" stroke="#000000" stroke-width="2" stroke-linejoin="butt" points="10.000006675720215,15.50001335144043 0.00000667572021484375,15.50001335144043 "/>
+  <polyline id="svg_3" stroke="#000000" stroke-width="2" stroke-linejoin="butt" points="40.000006675720215,25.50001335144043 30.000006675720215,25.50001335144043 "/>
+  <polyline id="svg_4" stroke="#000000" stroke-width="2" stroke-linejoin="butt" points="10.000006675720215,35.50001335144043 0.00000667572021484375,35.50001335144043 "/>
+  <text id="svg_5" transform="matrix(1,0,0,1,6.666666666666667,20) " text-anchor="top" font-size="11.764706" font-family="Arial" y="10.900012" x="10.000007">
+   <tspan id="svg_6" x="10.000007" dy="0">1</tspan>
+  </text>
+ </g>
+</svg>

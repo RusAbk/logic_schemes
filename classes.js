@@ -277,13 +277,6 @@ class NotNode extends InvNode{
     }
     draw(){
         this.basicInvDraw();
-
-        this.shape.text = this.drawer.text("1").move(0, 10);
-        this.shape.text.font({
-            family: 'Arial', size: this.w/1.7, anchor: 'top', leading: '1'
-          })
-        this.shape.text.transform({translateX: this.w/3, translateY: this.h/2.5})
-        this.shape.text.addClass('unselectable')
     }
 }
 

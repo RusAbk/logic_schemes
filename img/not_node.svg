@@ -1,0 +1,14 @@
+<svg width="40" height="51" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_1" y="0.47809" x="10.039843" class="base" stroke="#000000" fill="#ffffff" height="50" width="20"/>
+  <polyline id="svg_2" stroke="#000000" stroke-width="2" stroke-linejoin="butt" points="10.03984260559082,25.478090286254883 0.03984260559082031,25.478090286254883 "/>
+  <polyline id="svg_3" stroke="#000000" stroke-width="2" stroke-linejoin="butt" points="40.03984260559082,25.478090286254883 30.03984260559082,25.478090286254883 "/>
+  <circle id="svg_4" transform="matrix(1,0,0,1,16.666666666666668,21.666666666666668) " stroke="#000000" fill="#ffffff" cy="3.811424" cx="13.373176" r="3.333333"/>
+ </g>
+</svg>
