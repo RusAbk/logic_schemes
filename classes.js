@@ -2,6 +2,7 @@
 
 let selectedNodes = [];
 let appLinks = [];
+let appInputs = [];
 
 class Node{
     constructor(drawer, input = null){
@@ -138,6 +139,7 @@ class Input extends Node{
         this.stroke = '#000';
 
         this.readyToDraw = true;
+        appInputs.push(this);
         this.draw();
     }
     operate(){
@@ -156,6 +158,13 @@ class Input extends Node{
             this.shape.base.addClass('base')
             this.shape.base.move(this.x, 0);
              // this.shape.output = this.drawer.circle(`0,0 1,0`);
+
+             this.shape.textBg = this.drawer.rect(20, 20).fill('#fff').move(0, 0).transform({translateX: -10, translateY: 0})
+             this.shape.text = this.drawer.text(`x${appInputs.length}`).move(0, 0);
+             this.shape.text.font({
+                 family: 'Arial', size: 14, anchor: 'top', leading: '1'
+               })
+             this.shape.text.transform({translateX: -4, translateY: 0})
     
             this.shape.base.node.addEventListener('click', (e)=>{
                 if(e.currentTarget.parentElement.classList.contains('linkMode')){
